@@ -1,0 +1,1 @@
+A simple Discord bot example, written with [DSharpPlus](https://github.com/DSharpPlus/DSharpPlus) in F#.
