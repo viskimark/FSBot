@@ -10,10 +10,9 @@ open DSharpPlus.Entities
 type Commands() =
     inherit BaseCommandModule()
 
-    [<Command "hi">]
+    [<Command "hi"; Description "Say hello to F#">]
     member this.Hi (ctx: CommandContext) =
         task {
-            sprintf "Hello %s from F#!" (ctx.User.Mention)
-            |> ctx.RespondAsync
-            |> ignore
+            sprintf "Hello %s from F#!" ctx.User.Mention
+            |> ctx.RespondAsync |> ignore
         } :> Task

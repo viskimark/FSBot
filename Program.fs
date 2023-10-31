@@ -27,11 +27,10 @@ module Program =
         let commandsConfig = CommandsNextConfiguration()
         commandsConfig.StringPrefixes <- ["!"]
 
-        let commands = client.UseCommandsNext(commandsConfig)
-        commands.RegisterCommands<Commands>()
+        let commands = client.UseCommandsNext commandsConfig
+        commands.RegisterCommands<Commands> ()
 
         client.ConnectAsync () |> Async.AwaitTask |> Async.RunSynchronously
-
         Task.Delay -1  |> Async.AwaitTask |> Async.RunSynchronously
 
         0
